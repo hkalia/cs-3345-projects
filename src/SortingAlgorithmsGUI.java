@@ -19,6 +19,8 @@ class SortingAlgorithmsGUI {
     JTable table = new JTable(new MyTableModel());
     JScrollPane scrollPane = new JScrollPane(table);
 
+    private JLabel winnerLabel = new JLabel("Winning Algorithm: ");
+
     private int listSize = 15000;
     private String listOrder = "Random";
 
@@ -47,11 +49,19 @@ class SortingAlgorithmsGUI {
         };
         listText.addActionListener(listTextListener);
 
-        ActionListener listButtonListener = event -> {
-            System.out.println(listOrder);
-            System.out.println(listSize);
-        };
+        ActionListener listButtonListener = event -> startContest();
         listButton.addActionListener(listButtonListener);
+    }
+
+    private void startContest() {
+        // How to update table
+        for (int i = 0; i < table.getRowCount(); i++) {
+            for (int j = 1; j < table.getColumnCount(); j++) {
+                table.setValueAt("data", i, j);
+            }
+        }
+        // How to update winner
+        winnerLabel.setText("Winning Algorithm: Insertion Sort");
     }
 
     /**
@@ -96,7 +106,8 @@ class SortingAlgorithmsGUI {
         resultsPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createTitledBorder("Results"),
                 BorderFactory.createEmptyBorder(5, 5, 5, 5)));
-        resultsPanel.add(scrollPane, new GridBagConstraints(0, 0, GridBagConstraints.REMAINDER, GridBagConstraints.REMAINDER, 0.1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+        resultsPanel.add(scrollPane, new GridBagConstraints(0, 0, GridBagConstraints.REMAINDER, 1, 0.1, 0.1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
         table.setFillsViewportHeight(true);
+        resultsPanel.add(winnerLabel, new GridBagConstraints(0, 1, GridBagConstraints.REMAINDER, GridBagConstraints.REMAINDER, 0.1, 0.001, GridBagConstraints.LINE_START, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 10));
     }
 }

@@ -11,26 +11,32 @@ class MyTableModel extends AbstractTableModel {
             {"Total Time: ", "", "", "", "", "", ""},
     };
 
-    public int getColumnCount() {
-        return columnNames.length;
-    }
-
+    @Override
     public int getRowCount() {
         return data.length;
     }
 
+    @Override
+    public int getColumnCount() {
+        return columnNames.length;
+    }
+
+    @Override
     public String getColumnName(int col) {
         return columnNames[col];
     }
 
+    @Override
     public Object getValueAt(int row, int col) {
         return data[row][col];
     }
 
+    @Override
     public Class<?> getColumnClass(int c) {
-        return getValueAt(0, c).getClass();
+        return String.class;
     }
 
+    @Override
     public void setValueAt(Object value, int row, int col) {
         data[row][col] = value;
         fireTableCellUpdated(row, col);
