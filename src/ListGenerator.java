@@ -11,7 +11,7 @@ public class ListGenerator {
 		return numbers;
 	}
 	
-	static ArrayList generateReverseOrder(int x) {
+	static ArrayList<Integer> generateReverseOrder(int x) {
 		ArrayList<Integer> numbers = new ArrayList<>(x);
 		for(int i = x; i >= 0 ; i--){
 		    numbers.add(i);
@@ -20,7 +20,7 @@ public class ListGenerator {
 		return numbers;
 	}
 	
-	static ArrayList generateRandomOrder(int x) {
+	static ArrayList<Integer> generateRandomOrder(int x) {
 		ArrayList<Integer> numbers = new ArrayList<>(x);
 		Random r = new Random(); 
 		for(int i = 0; i < x; i++){
@@ -39,7 +39,7 @@ public class ListGenerator {
 		return numbers;
 	}
 	
-	static ArrayList generateAlmostOrder(int x) {
+	static ArrayList<Integer> generateAlmostOrder(int x) {
 		ArrayList<Integer> numbers = new ArrayList<>(x);
 		Random r = new Random(); 
 		for(int i = 0; i < x; i++){
