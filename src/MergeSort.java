@@ -2,6 +2,7 @@
 public class MergeSort {
     public static int totalComparisons = 0;
     public static int totalMovements = 0;
+
     /**
      * The method for sorting the numbers
      */
@@ -72,7 +73,7 @@ public class MergeSort {
             mergeMod(firstHalf, secondHalf, list);
         }
         totalComparisons++;
-        
+
     }
 
     /**
@@ -83,7 +84,7 @@ public class MergeSort {
         int current2 = 0; // Current index in list2
         int current3 = 0; // Current index in temp
         totalMovements += 3;
-        
+
 
         while (current1 < list1.length && current2 < list2.length) {
             if (list1[current1] < list2[current2])
@@ -96,22 +97,22 @@ public class MergeSort {
         totalComparisons += 2;
 
         while (current1 < list1.length) {
-        	temp[current3++] = list1[current1++];
-        	totalMovements++;
-        	totalComparisons++;
+            temp[current3++] = list1[current1++];
+            totalMovements++;
+            totalComparisons++;
         }
         totalComparisons++;
-            
+
 
         while (current2 < list2.length) {
-        	temp[current3++] = list2[current2++];
-        	totalMovements++;
-        	totalComparisons++;
+            temp[current3++] = list2[current2++];
+            totalMovements++;
+            totalComparisons++;
         }
         totalComparisons++;
-            
+
     }
-    
+
     /**
      * A test method
      */

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Random;
 
 public class ListGenerator {
@@ -57,31 +56,22 @@ public class ListGenerator {
                 numbers[randomIndex] = temp;
             }
 
+
         }
 
         return numbers;
     }
-    
+
     static int[] generateEightyTwenty(int x) { //
-    	int lenEighty = (int) (x * 0.8);
-    	int lenTwenty = (int) (x * 0.2);
+        int lenEighty = (int) Math.floor(x * 0.8);
+        int lenTwenty = x - lenEighty;
         int[] numbers = new int[x];
-        Random r = new Random();
-        for (int i = 0; i < x; i++) {
+
+        for (int i = 0; i < lenEighty; i++) {
             numbers[i] = i;
         }
-        int[] numbersEighty = new int[lenEighty];
-        int[] numbersTwenty = new int[lenTwenty];
-        System.arraycopy(numbers, 0, numbersEighty, 0, lenEighty);
-        System.arraycopy(numbers, lenEighty, numbersTwenty, 0, lenTwenty);
-        for (int i = 0; i < lenTwenty; i++) {
-            int randomIndex = r.nextInt(lenTwenty);
-            int temp = numbersTwenty[i];
-            numbersTwenty[i] = numbersTwenty[randomIndex];
-            numbersTwenty[randomIndex] = temp;
-        }
-        System.arraycopy(numbersEighty, 0, numbers, 0, lenEighty);
-        System.arraycopy(numbersTwenty, 0, numbers, lenEighty, lenTwenty);
+
+        System.arraycopy(generateRandomOrder(x), lenEighty, numbers, lenEighty, lenTwenty);
         return numbers;
     }
 

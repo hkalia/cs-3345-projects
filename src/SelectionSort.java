@@ -5,7 +5,7 @@ public class SelectionSort {
      */
     public static int totalComparisons = 0;
     public static int totalMovements = 0;
-    
+
     public static void selectionSort(double[] list) {
         for (int i = 0; i < list.length - 1; i++) {
 
@@ -27,13 +27,13 @@ public class SelectionSort {
             }
         }
         totalComparisons++;
-    	totalMovements++;
+        totalMovements++;
     }
-    
+
     public static void selectionSortMod(double[] list) {
         for (int i = 0; i < list.length - 1; i++) {
-        	totalComparisons++;
-        	totalMovements++;
+            totalComparisons++;
+            totalMovements++;
             // Find the minimum in the list[i..list.length-1]
             double currentMin = list[i];
             totalMovements++;
@@ -60,8 +60,8 @@ public class SelectionSort {
             }
             totalComparisons++;
         }
-    	totalComparisons++;
-    	totalMovements++;
+        totalComparisons++;
+        totalMovements++;
     }
 
     public static void main(String[] args) {

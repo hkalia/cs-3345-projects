@@ -15,8 +15,8 @@ public class HeapMod<E extends Comparable<E>> {
     public HeapMod(E[] objects) {
         for (int i = 0; i < objects.length; i++)
             add(objects[i]);
-        	totalComparisons++;
-        	totalMovements += 2;
+        totalComparisons++;
+        totalMovements += 2;
     }
 
     /**
@@ -65,7 +65,7 @@ public class HeapMod<E extends Comparable<E>> {
         int currentIndex = 0;
         totalMovements++;
         while (currentIndex < list.size()) {
-        	totalComparisons++;
+            totalComparisons++;
             int leftChildIndex = 2 * currentIndex + 1;
             totalMovements++;
             int rightChildIndex = 2 * currentIndex + 2;
@@ -117,7 +117,7 @@ public class HeapMod<E extends Comparable<E>> {
      * Return true if heap is empty
      */
     public boolean isEmpty() {
-    	totalComparisons++;
+        totalComparisons++;
         return list.size() == 0;
     }
 }
