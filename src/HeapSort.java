@@ -2,6 +2,9 @@ public class HeapSort {
     /**
      * Heap sort method
      */
+    public static int totalComparisons = 0;
+    public static int totalMovements = 0;
+    
     public static <E extends Comparable<E>> void heapSort(E[] list) {
         // Create a Heap of integers
         Heap<E> heap = new Heap<>();
@@ -13,6 +16,31 @@ public class HeapSort {
         // Remove elements from the heap
         for (int i = list.length - 1; i >= 0; i--)
             list[i] = heap.remove();
+    }
+    
+    public static <E extends Comparable<E>> void heapSortMod(E[] list) {
+        // Create a Heap of integers
+        HeapMod<E> heap = new HeapMod<>();
+
+        // Add elements to the heap
+        for (int i = 0; i < list.length; i++) {
+        	heap.add(list[i]);
+        	totalComparisons++;
+        	totalMovements += 2;
+        }
+        
+        
+        	
+
+        // Remove elements from the heap
+        for (int i = list.length - 1; i >= 0; i--) {
+        	list[i] = heap.remove();
+        	totalComparisons++;
+        	totalMovements += 2;
+        }
+        totalMovements++;
+        
+            
     }
 
     /**
