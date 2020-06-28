@@ -8,7 +8,7 @@ class MyTableModel extends AbstractTableModel {
             {"List Type: ", "", "", "", "", "", ""},
             {"Comparisons: ", "", "", "", "", "", ""},
             {"Movements: ", "", "", "", "", "", ""},
-            {"Total Time: ", "", "", "", "", "", ""},
+            {"Total Time (µsec): ", "", "", "", "", "", ""},
     };
 
     @Override

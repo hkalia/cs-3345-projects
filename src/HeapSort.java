@@ -19,7 +19,7 @@ public class HeapSort {
     }
     
     public static <E extends Comparable<E>> void heapSortMod(E[] list) {
-        // Create a Heap of integers
+    	// Create a Heap of integers
         HeapMod<E> heap = new HeapMod<>();
 
         // Add elements to the heap
