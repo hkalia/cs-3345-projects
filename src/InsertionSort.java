@@ -1,4 +1,8 @@
 public class InsertionSort {
+
+    public static int totalComparisons = 0;
+    public static int totalMovements = 0;
+
     /**
      * The method for sorting the numbers
      */
@@ -14,6 +18,31 @@ public class InsertionSort {
 
             // Insert the current element into list[k+1]
             list[k + 1] = currentElement;
+        }
+    }
+
+    /**
+     * The method for sorting the numbers
+     */
+    public static void insertionSortMod(int[] list) {
+        totalComparisons = 0;
+        totalMovements = 0;
+        for (int i = 1; i < list.length; i++) {
+            totalComparisons++;
+            /** insert list[i] into a sorted sublist list[0..i-1] so that
+             list[0..i] is sorted. */
+            int currentElement = list[i];
+            totalMovements++;
+            int k;
+            for (k = i - 1; k >= 0 && list[k] > currentElement; k--) {
+                totalComparisons += 2;
+                list[k + 1] = list[k];
+                totalMovements++;
+            }
+
+            // Insert the current element into list[k+1]
+            list[k + 1] = currentElement;
+            totalMovements++;
         }
     }
 

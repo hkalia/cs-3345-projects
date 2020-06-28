@@ -1,64 +1,65 @@
 import java.util.ArrayList;
 import java.util.Random;
-public class ListGenerator {
-	
-	static ArrayList<Integer> generateInOrder(int x) {
-		ArrayList<Integer> numbers = new ArrayList<>(x);
-		for(int i = 0; i < x; i++){
-		    numbers.add(i);
-		}
-		
-		return numbers;
-	}
-	
-	static ArrayList<Integer> generateReverseOrder(int x) {
-		ArrayList<Integer> numbers = new ArrayList<>(x);
-		for(int i = x; i >= 0 ; i--){
-		    numbers.add(i);
-		}
-		
-		return numbers;
-	}
-	
-	static ArrayList<Integer> generateRandomOrder(int x) {
-		ArrayList<Integer> numbers = new ArrayList<>(x);
-		Random r = new Random(); 
-		for(int i = 0; i < x; i++){
-		    numbers.add(i);
-		}
-		
-		for(int i = x - 1; i > 0; i--) {
-			int randomIndex = r.nextInt(i+1);
-			
-			//swap the number at i with the one at randomIndex
-			int temp = numbers.get(randomIndex);
-			numbers.set(i, numbers.get(randomIndex));
-			numbers.set(randomIndex, temp);
-		}
-		
-		return numbers;
-	}
-	
-	static ArrayList<Integer> generateAlmostOrder(int x) {
-		ArrayList<Integer> numbers = new ArrayList<>(x);
-		Random r = new Random(); 
-		for(int i = 0; i < x; i++){
-		    numbers.add(i);
-		}
-		
-		for(int i = x - 1; i > 0; i--) {
-			int randomIndex = r.nextInt(i+1);
-			
-			if(r.nextInt(50) == 0) { //only swap them 2% of the time
-				//swap the number at i with the one at randomIndex
-				int temp = numbers.get(randomIndex);
-				numbers.set(i, numbers.get(randomIndex));
-				numbers.set(randomIndex, temp);
-			}
 
-		}
-		
-		return numbers;
-	}
-	
+public class ListGenerator {
+
+    static int[] generateInOrder(int x) {
+        int[] numbers = new int[x];
+        for (int i = 0; i < x; i++) {
+            numbers[i] = i;
+        }
+
+        return numbers;
+    }
+
+    static int[] generateReverseOrder(int x) {
+        int[] numbers = new int[x];
+        for (int i = 0; i < x; i++) {
+            numbers[i] = x - i - 1;
+        }
+
+        return numbers;
+    }
+
+    static int[] generateRandomOrder(int x) {
+        int[] numbers = new int[x];
+        Random r = new Random();
+        for (int i = 0; i < x; i++) {
+            numbers[i] = i;
+        }
+
+        for (int i = 0; i < x; i++) {
+            int randomIndex = r.nextInt(x);
+
+            //swap the number at i with the one at randomIndex
+            int temp = numbers[i];
+            numbers[i] = numbers[randomIndex];
+            numbers[randomIndex] = temp;
+        }
+
+        return numbers;
+    }
+
+    static int[] generateAlmostOrder(int x) {
+        int[] numbers = new int[x];
+        Random r = new Random();
+        for (int i = 0; i < x; i++) {
+            numbers[i] = i;
+        }
+
+        for (int i = 0; i < x; i++) {
+            int randomIndex = r.nextInt(x);
+
+            if (r.nextInt(50) == 0) { //only swap them 2% of the time
+                //swap the number at i with the one at randomIndex
+                int temp = numbers[i];
+                numbers[i] = numbers[randomIndex];
+                numbers[randomIndex] = temp;
+            }
+
+        }
+
+        return numbers;
+    }
+
 }
