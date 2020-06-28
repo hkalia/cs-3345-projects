@@ -56,16 +56,16 @@ public class QuickSort {
     public static void quickSortMod(int[] list) {
         totalComparisons = 0;
         totalMovements = 0;
-        quickSort(list, 0, list.length - 1);
+        quickSortMod(list, 0, list.length - 1);
     }
 
     private static void quickSortMod(int[] list, int first, int last) {
         if (last > first) {
             totalComparisons++;
-            int pivotIndex = partition(list, first, last);
+            int pivotIndex = partitionMod(list, first, last);
             totalMovements++;
-            quickSort(list, first, pivotIndex - 1);
-            quickSort(list, pivotIndex + 1, last);
+            quickSortMod(list, first, pivotIndex - 1);
+            quickSortMod(list, pivotIndex + 1, last);
         }
     }
 

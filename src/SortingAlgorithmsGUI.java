@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.*;
 import javax.swing.event.*;
@@ -12,7 +13,7 @@ class SortingAlgorithmsGUI {
     private JPanel listOptionsPanel = new JPanel(new GridBagLayout(), true);
     private JPanel resultsPanel = new JPanel(new GridBagLayout(), true);
 
-    private String[] listOrders = {"Random", "ReverseOrder", "AlmostOrder", "InOrder"};
+    private String[] listOrders = {"Random", "ReverseOrder", "AlmostOrder", "InOrder", "80/20"};
     private JComboBox<String> listDropDown = new JComboBox<>(listOrders);
     private JSlider listSlider = new JSlider(2, 30000);
     private JTextField listText = new JTextField("15000", 7);
@@ -55,27 +56,35 @@ class SortingAlgorithmsGUI {
         listButton.addActionListener(listButtonListener);
     }
 
-    private void startContest() {
-        int[] list = switch (listOrder) {
+    private int[] createList() {
+        return switch (listOrder) {
             case "Random" -> ListGenerator.generateRandomOrder(listSize);
             case "ReverseOrder" -> ListGenerator.generateReverseOrder(listSize);
             case "AlmostOrder" -> ListGenerator.generateAlmostOrder(listSize);
             case "InOrder" -> ListGenerator.generateInOrder(listSize);
+//            case "80/20" ->
             default -> null;
         };
+    }
 
-        for (int i = 0; i < listSize; i++) {
-            System.out.print(list[i]);
+    private void startContest() {
+        for (int j = 1; j < table.getColumnCount(); j++) {
+            table.setValueAt(Integer.toString(listSize), 0, j);
+            table.setValueAt(listOrder, 1, j);
         }
 
-        //run the sorting algorithms on the list here
+        int[] list = createList();
+        InsertionSort.insertionSortMod(list);
+        table.setValueAt(Integer.toString(InsertionSort.totalComparisons), 2, 1);
+        table.setValueAt(Integer.toString(InsertionSort.totalMovements), 3, 1);
 
-        // How to update table
-        for (int i = 0; i < table.getRowCount(); i++) {
-            for (int j = 1; j < table.getColumnCount(); j++) {
-                table.setValueAt("data", i, j);
-            }
-        }
+        list = createList();
+        QuickSort.quickSortMod(list);
+        table.setValueAt(Integer.toString(QuickSort.totalComparisons), 2, 3);
+        table.setValueAt(Integer.toString(QuickSort.totalMovements), 3, 3);
+
+//        System.out.println(Arrays.toString(list));
+
         // How to update winner
         winnerLabel.setText("Winning Algorithm: Insertion Sort");
     }
