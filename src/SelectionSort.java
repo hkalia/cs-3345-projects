@@ -3,8 +3,8 @@ public class SelectionSort {
     /**
      * The method for sorting the numbers
      */
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     public static void selectionSort(double[] list) {
         for (int i = 0; i < list.length - 1; i++) {

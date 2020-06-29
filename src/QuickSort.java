@@ -1,7 +1,7 @@
 
 public class QuickSort {
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     public static void quickSort(int[] list) {
         quickSort(list, 0, list.length - 1);

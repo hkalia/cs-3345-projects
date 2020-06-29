@@ -71,7 +71,7 @@ public class ListGenerator {
             numbers[i] = i;
         }
 
-        System.arraycopy(generateRandomOrder(x), lenEighty, numbers, lenEighty, lenTwenty);
+        System.arraycopy(generateRandomOrder(lenTwenty), 0, numbers, lenEighty, lenTwenty);
         return numbers;
     }
 

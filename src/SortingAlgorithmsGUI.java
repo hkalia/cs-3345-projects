@@ -1,11 +1,8 @@
-import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.table.TableModel;
+import javax.swing.event.ChangeListener;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 class SortingAlgorithmsGUI {
 
@@ -77,30 +74,30 @@ class SortingAlgorithmsGUI {
         InsertionSort.totalComparisons = 0;
         InsertionSort.totalMovements = 0;
         InsertionSort.insertionSortMod(list);
-        table.setValueAt(Integer.toString(InsertionSort.totalComparisons), 2, 1);
-        table.setValueAt(Integer.toString(InsertionSort.totalMovements), 3, 1);
+        table.setValueAt(Long.toString(InsertionSort.totalComparisons), 2, 1);
+        table.setValueAt(Long.toString(InsertionSort.totalMovements), 3, 1);
 
         list = createList();
         double[] listDouble = Arrays.stream(list).asDoubleStream().toArray(); //Selection sort algorithm uses doubles
         SelectionSort.totalComparisons = 0;
         SelectionSort.totalMovements = 0;
         SelectionSort.selectionSortMod(listDouble);
-        table.setValueAt(Integer.toString(SelectionSort.totalComparisons), 2, 2);
-        table.setValueAt(Integer.toString(SelectionSort.totalMovements), 3, 2);
+        table.setValueAt(Long.toString(SelectionSort.totalComparisons), 2, 2);
+        table.setValueAt(Long.toString(SelectionSort.totalMovements), 3, 2);
 
         list = createList();
         QuickSort.totalComparisons = 0;
         QuickSort.totalMovements = 0;
         QuickSort.quickSortMod(list);
-        table.setValueAt(Integer.toString(QuickSort.totalComparisons), 2, 3);
-        table.setValueAt(Integer.toString(QuickSort.totalMovements), 3, 3);
+        table.setValueAt(Long.toString(QuickSort.totalComparisons), 2, 3);
+        table.setValueAt(Long.toString(QuickSort.totalMovements), 3, 3);
 
         list = createList();
         MergeSort.totalComparisons = 0;
         MergeSort.totalMovements = 0;
         MergeSort.mergeSortMod(list);
-        table.setValueAt(Integer.toString(MergeSort.totalComparisons), 2, 4);
-        table.setValueAt(Integer.toString(MergeSort.totalMovements), 3, 4);
+        table.setValueAt(Long.toString(MergeSort.totalComparisons), 2, 4);
+        table.setValueAt(Long.toString(MergeSort.totalMovements), 3, 4);
 
         list = createList();
         //heapSort takes an object array, cannot use primitives
@@ -110,22 +107,21 @@ class SortingAlgorithmsGUI {
         HeapSort.totalMovements = 0;
         HeapMod.totalMovements = 0;
         HeapSort.heapSortMod(listInteger);
-        int totalComparisonsHeapSort = HeapSort.totalComparisons + HeapMod.totalComparisons;
-        int totalMovementsHeapSort = HeapSort.totalMovements + HeapMod.totalMovements;
-        table.setValueAt(Integer.toString(totalComparisonsHeapSort), 2, 5);
-        table.setValueAt(Integer.toString(totalMovementsHeapSort), 3, 5);
+        long totalComparisonsHeapSort = HeapSort.totalComparisons + HeapMod.totalComparisons;
+        long totalMovementsHeapSort = HeapSort.totalMovements + HeapMod.totalMovements;
+        table.setValueAt(Long.toString(totalComparisonsHeapSort), 2, 5);
+        table.setValueAt(Long.toString(totalMovementsHeapSort), 3, 5);
 
         list = createList();
         Radix.totalComparisons = 0;
         Radix.totalMovements = 0;
         Radix.radixsortMod(list, listSize);
-        table.setValueAt(Integer.toString(Radix.totalComparisons), 2, 6);
-        table.setValueAt(Integer.toString(Radix.totalMovements), 3, 6);
+        table.setValueAt(Long.toString(Radix.totalComparisons), 2, 6);
+        table.setValueAt(Long.toString(Radix.totalMovements), 3, 6);
 
         long start;
         long end;
         long winnerDuration;
-        String winner = "InsertionSort";
 
         list = createList();
         start = System.nanoTime();
@@ -133,7 +129,8 @@ class SortingAlgorithmsGUI {
         end = System.nanoTime();
         long durationInsertionSort = (end - start) / 1000; //microseconds
         winnerDuration = durationInsertionSort;
-        table.setValueAt(Double.toString(durationInsertionSort), 4, 1);
+        table.setValueAt(Long.toString(durationInsertionSort), 4, 1);
+        String winner = "InsertionSort";
 
         list = createList();
         listDouble = Arrays.stream(list).asDoubleStream().toArray(); //Selection sort algorithm uses doubles
@@ -141,7 +138,7 @@ class SortingAlgorithmsGUI {
         SelectionSort.selectionSort(listDouble);
         end = System.nanoTime();
         long durationSelectionSort = (end - start) / 1000; //microseconds
-        table.setValueAt(Double.toString(durationSelectionSort), 4, 2);
+        table.setValueAt(Long.toString(durationSelectionSort), 4, 2);
         if (durationSelectionSort < winnerDuration) {
             winner = "SelectionSort";
             winnerDuration = durationSelectionSort;
@@ -152,7 +149,7 @@ class SortingAlgorithmsGUI {
         QuickSort.quickSort(list);
         end = System.nanoTime();
         long durationQuickSort = (end - start) / 1000; //microseconds
-        table.setValueAt(Double.toString(durationQuickSort), 4, 3);
+        table.setValueAt(Long.toString(durationQuickSort), 4, 3);
         if (durationQuickSort < winnerDuration) {
             winner = "QuickSort";
             winnerDuration = durationQuickSort;
@@ -163,7 +160,7 @@ class SortingAlgorithmsGUI {
         MergeSort.mergeSort(list);
         end = System.nanoTime();
         long durationMergeSort = (end - start) / 1000; //microseconds
-        table.setValueAt(Double.toString(durationMergeSort), 4, 4);
+        table.setValueAt(Long.toString(durationMergeSort), 4, 4);
         if (durationMergeSort < winnerDuration) {
             winner = "MergeSort";
             winnerDuration = durationMergeSort;
@@ -175,7 +172,7 @@ class SortingAlgorithmsGUI {
         HeapSort.heapSort(listInteger);
         end = System.nanoTime();
         long durationHeapSort = (end - start) / 1000; //microseconds
-        table.setValueAt(Double.toString(durationHeapSort), 4, 5);
+        table.setValueAt(Long.toString(durationHeapSort), 4, 5);
         if (durationHeapSort < winnerDuration) {
             winner = "HeapSort";
             winnerDuration = durationHeapSort;
@@ -186,10 +183,13 @@ class SortingAlgorithmsGUI {
         Radix.radixsort(list, listSize);
         end = System.nanoTime();
         long durationRadixSort = (end - start) / 1000; //microseconds
-        table.setValueAt(Double.toString(durationRadixSort), 4, 6);
+        table.setValueAt(Long.toString(durationRadixSort), 4, 6);
         if (durationRadixSort < winnerDuration) {
             winner = "RadixSort";
         }
+
+        System.out.println(listSize);
+        System.out.println(listOrder);
 
         // update winner
         winnerLabel.setText("Winning Algorithm (time): " + winner);

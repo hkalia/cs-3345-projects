@@ -1,7 +1,7 @@
 public class HeapMod<E extends Comparable<E>> {
     private java.util.ArrayList<E> list = new java.util.ArrayList<>();
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     /**
      * Create a default heap

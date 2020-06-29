@@ -1,10 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 
 class Radix {
 
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     static void radixsort(int arr[], int n) { // Find the maximum number to know number of digits
         int m = getMax(arr, n);

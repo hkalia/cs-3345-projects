@@ -1,7 +1,7 @@
 
 public class MergeSort {
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     /**
      * The method for sorting the numbers

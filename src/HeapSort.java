@@ -2,8 +2,8 @@ public class HeapSort {
     /**
      * Heap sort method
      */
-    public static int totalComparisons = 0;
-    public static int totalMovements = 0;
+    public static long totalComparisons = 0;
+    public static long totalMovements = 0;
 
     public static <E extends Comparable<E>> void heapSort(E[] list) {
         // Create a Heap of integers
