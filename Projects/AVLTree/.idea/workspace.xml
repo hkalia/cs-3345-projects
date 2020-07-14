@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="527a8153-4c21-47df-94aa-5ea6bc916070" name="Default Changelist" comment="Create Basic Binary Tree">
+      <change afterPath="$PROJECT_DIR$/listISBN.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AVLNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AVLTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/bin/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/bin/books.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/AVLTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/RandomBinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/RandomBinaryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AVLTreeOld/src/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AVLTreeOld/src/books.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/description.html" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/description.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/project-template.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/project-template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/runConfigurations/Main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/runConfigurations/Main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/CS 3345 Project 1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/CS 3345 Project 1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/Report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/Report.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/sortingAlgorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/sortingAlgorithms.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/HeapMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/HeapMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/HeapSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/HeapSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/InsertionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/InsertionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/ListGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/ListGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/MergeSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/MergeSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/MyTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/MyTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/QuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/QuickSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/Radix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/Radix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/SelectionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/SelectionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/SortingAlgorithmsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/SortingAlgorithmsGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sortingAlgorithms/src/SortingAlgorithmsMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/../sortingAlgorithms/src/SortingAlgorithmsMain.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="ProjectId" id="1egXxBh9X6ZSQAJOe7HmpUQ56Ap" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="AVLTree" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="527a8153-4c21-47df-94aa-5ea6bc916070" name="Default Changelist" comment="" />
+      <created>1594744453514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594744453514</updated>
+      <workItem from="1594744455665" duration="17000" />
+      <workItem from="1594744571849" duration="3996000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1658" y="-454" width="1162" height="855" key="CommitChangelistDialog2" timestamp="1594748492601">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state x="1658" y="-454" width="1162" height="855" key="CommitChangelistDialog2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748492601" />
+    <state width="1876" height="289" key="GridCell.Tab.0.bottom" timestamp="1594748252729">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state width="1876" height="289" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748252729" />
+    <state width="1876" height="289" key="GridCell.Tab.0.center" timestamp="1594748252727">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state width="1876" height="289" key="GridCell.Tab.0.center/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748252727" />
+    <state width="1876" height="289" key="GridCell.Tab.0.left" timestamp="1594748252726">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state width="1876" height="289" key="GridCell.Tab.0.left/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748252726" />
+    <state width="1876" height="289" key="GridCell.Tab.0.right" timestamp="1594748252728">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state width="1876" height="289" key="GridCell.Tab.0.right/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748252728" />
+    <state x="1748" y="-391" key="SettingsEditor" timestamp="1594745030696">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state x="1748" y="-391" key="SettingsEditor/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594745030696" />
+    <state x="2042" y="-109" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594748143720">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state x="2042" y="-109" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594748143720" />
+    <state x="1904" y="-323" width="670" height="676" key="search.everywhere.popup" timestamp="1594746803024">
+      <screen x="1280" y="-557" width="1920" height="1057" />
+    </state>
+    <state x="1904" y="-323" width="670" height="676" key="search.everywhere.popup/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594746803024" />
+  </component>
+</project>
