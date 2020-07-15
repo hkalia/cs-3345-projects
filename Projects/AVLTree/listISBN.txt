@@ -2767,7 +2767,6 @@
 9781558614550 In a Lonely Place Gardner
 9780881844351 The New Adventures of Sherlock Holmes Gardner
 9781903155585 The Expendable Man Gardner
-9780547577449 The Best American Noir of the Century Gardner
 9781841952772 Ride the Pink Horse Gardner
 9781101872611 The Big Book of Sherlock Holmes Stories Gardner
 9780440213352 A Woman's Eye Gardner
@@ -2784,7 +2783,6 @@
 9780404538309 Dark Certainty Gardner
 9781597980685 Detective Book Magazine - Spring/44: Adventure House Presents: Gardner
 9781555216801 Cat Crimes 1 Gardner
-9780786704613 American Pulp Gardner
 9781567312782 Cat Crimes I II and III Gardner
 9780786713479 Fifty Best Mysteries Gardner
 9780451191984 Vengeance Is Hers Gardner
@@ -3597,7 +3595,7 @@
 9783458341079 Glück: Betrachtungen und Gedichte Hesse
 9783518456385 Die schönsten Erzählungen Hesse
 9785837005770 Магия книги Hesse
-973576198x Gertrud. Rosshalde. Ultima vara a lui Klingsor Hesse
+973576198 Gertrud. Rosshalde. Ultima vara a lui Klingsor Hesse
 9788420646794 Alma infantil/Mes de julio Hesse
 9788496834958 Correspondencia Hesse
 9789600344073 Ο Βροχοποιός - Ο Εξομολογητής - Ινδική Βιογραφία Hesse

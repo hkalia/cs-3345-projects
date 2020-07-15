@@ -1,11 +1,11 @@
-public class AVLNode {
-    String key;
-    Book value;
+public class AVLNode<K extends Comparable<? super K>, V> {
+    K key;
+    V value;
     int height;
-    AVLNode left, right;
+    AVLNode<K, V> left, right;
 
-    public AVLNode(Book book) {
-        this.key = book.ISBN;
-        this.value = book;
+    public AVLNode(K key, V value) {
+        this.key = key;
+        this.value = value;
     }
 }

@@ -5,20 +5,23 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        AVLTree avlTree = new AVLTree();
+        AVLTree<Long, Book> avlTree = new AVLTree<>();
 
         try {
-            FileInputStream fis = new FileInputStream("list.txt");
+            FileInputStream fis = new FileInputStream("listISBN.txt");
             Scanner sc = new Scanner(fis);
 
             while (sc.hasNextLine()) {
-                avlTree.insert(new Book(sc.nextLine()));
+                Book book = new Book(sc.nextLine());
+                avlTree.insert(book.ISBN, book);
             }
             sc.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        avlTree.printPreOrder(avlTree.root);
+        // avlTree.printLevelOrder(avlTree.root);
+        System.out.println("height: " + avlTree.root.height);
+        System.out.println("complexity: " + avlTree.complexity);
     }
 }

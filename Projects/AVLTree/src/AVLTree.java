@@ -1,10 +1,11 @@
-public class AVLTree {
-    AVLNode root;
+public class AVLTree<K extends Comparable<? super K>, V> {
+    public long complexity = 0;
+    public AVLNode<K, V> root;
 
-    public void insert(Book book) {
-        if (book == null) return;
+    public void insert(K key, V value) {
+        if (value == null) return;
 
-        AVLNode newNode = new AVLNode(book);
+        AVLNode<K, V> newNode = new AVLNode<>(key, value);
         if (root == null) {
             root = newNode;
             return;
@@ -12,7 +13,8 @@ public class AVLTree {
         root = insertRecur(root, newNode);
     }
 
-    private AVLNode insertRecur(AVLNode cur, AVLNode newNode) {
+    private AVLNode<K, V> insertRecur(AVLNode<K, V> cur, AVLNode<K, V> newNode) {
+        complexity++;
         if (cur == null) return newNode;
 
         int cmp = newNode.key.compareTo(cur.key);
@@ -54,8 +56,8 @@ public class AVLTree {
         return cur;
     }
 
-    private AVLNode rightRotate(AVLNode cur) {
-        AVLNode leftChild = cur.left;
+    private AVLNode<K, V> rightRotate(AVLNode<K, V> cur) {
+        AVLNode<K, V> leftChild = cur.left;
         cur.left = cur.left.right;
         leftChild.right = cur;
 
@@ -65,8 +67,8 @@ public class AVLTree {
         return leftChild;
     }
 
-    private AVLNode leftRotate(AVLNode cur) {
-        AVLNode rightChild = cur.right;
+    private AVLNode<K, V> leftRotate(AVLNode<K, V> cur) {
+        AVLNode<K, V> rightChild = cur.right;
         cur.right = cur.right.left;
         rightChild.left = cur;
 
@@ -76,14 +78,14 @@ public class AVLTree {
         return rightChild;
     }
 
-    private int getBalance(AVLNode node) {
+    private int getBalance(AVLNode<K, V> node) {
         int leftHeight = node.left == null ? -1 : node.left.height;
         int rightHeight = node.right == null ? -1 : node.right.height;
 
         return leftHeight - rightHeight;
     }
 
-    private void updateHeight(AVLNode node) {
+    private void updateHeight(AVLNode<K, V> node) {
         // to get height, find the larger height between the two children and add 1
         int leftHeight = node.left == null ? -1 : node.left.height;
         int rightHeight = node.right == null ? -1 : node.right.height;
@@ -91,27 +93,48 @@ public class AVLTree {
         node.height = 1 + Math.max(leftHeight, rightHeight);
     }
 
-    void printPreOrder(AVLNode node) {
-        if (node != null) {
+    public void printPreOrder(AVLNode<K, V> tree) {
+        if (tree != null) {
             System.out.format("current: %13s | left: %13s | right %13s\n",
-                    node.key,
-                    node.left == null ? "null" : node.left.key,
-                    node.right == null ? "null" : node.right.key
+                    tree.key,
+                    tree.left == null ? "null" : tree.left.key,
+                    tree.right == null ? "null" : tree.right.key
             );
-            printPreOrder(node.left);
-            printPreOrder(node.right);
+            printPreOrder(tree.left);
+            printPreOrder(tree.right);
         }
     }
 
-    void printInOrder(AVLNode node) {
-        if (node != null) {
-            printInOrder(node.left);
+    public void printInOrder(AVLNode<K, V> tree) {
+        if (tree != null) {
+            printInOrder(tree.left);
             System.out.format("current: %13s | left: %13s | right %13s\n",
-                    node.key,
-                    node.left == null ? "null" : node.left.key,
-                    node.right == null ? "null" : node.right.key
+                    tree.key,
+                    tree.left == null ? "null" : tree.left.key,
+                    tree.right == null ? "null" : tree.right.key
             );
-            printInOrder(node.right);
+            printInOrder(tree.right);
         }
     }
+
+    public void printLevelOrder(AVLNode<K, V> tree) {
+        for (int i = 1; i < tree.height; i++)
+            printGivenLevel(tree, i);
+    }
+
+    public void printGivenLevel(AVLNode<K, V> tree, int level) {
+        if (tree == null) return;
+        if (level == 1)
+            System.out.format("current: %13s | left: %13s | right %13s\n",
+                    tree.key,
+                    tree.left == null ? "null" : tree.left.key,
+                    tree.right == null ? "null" : tree.right.key
+            );
+        else if (level > 1) {
+            printGivenLevel(tree.left, level - 1);
+            printGivenLevel(tree.right, level - 1);
+        }
+    }
+
+
 }
