@@ -13,7 +13,7 @@ public class Book {
         int i1 = line.indexOf(' ');
         int i2 = line.lastIndexOf(' ');
 
-        this.ISBN = Long.parseLong(line.substring(0, i1));
+        this.ISBN = Long.parseLong(line.substring(0, 3) + line.substring(4, i1));
         this.title = line.substring(i1 + 1, i2);
         this.authorLastName = line.substring(i2 + 1);
     }
