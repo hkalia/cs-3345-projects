@@ -1,7 +1,7 @@
 public class Book {
-    String ISBN;
-    String title;
-    String authorLastName;
+    public String ISBN;
+    public String title;
+    public String authorLastName;
 
     public Book(String ISBN, String title, String authorLastName) {
         this.ISBN = ISBN;
@@ -18,7 +18,7 @@ public class Book {
         this.authorLastName = line.substring(i2 + 1);
     }
 
-    public void print() {
-        System.out.println(ISBN + " " + title + " " + authorLastName);
+    public String asString() {
+        return ISBN + " " + title + " " + authorLastName;
     }
 }

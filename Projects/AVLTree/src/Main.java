@@ -8,7 +8,7 @@ public class Main {
         AVLTree avlTree = new AVLTree();
 
         try {
-            FileInputStream fis = new FileInputStream("listISBN.txt");
+            FileInputStream fis = new FileInputStream("list.txt");
             Scanner sc = new Scanner(fis);
 
             while (sc.hasNextLine()) {
@@ -19,6 +19,6 @@ public class Main {
             e.printStackTrace();
         }
 
-        avlTree.printInOrder(avlTree.root);
+        avlTree.printPreOrder(avlTree.root);
     }
 }
