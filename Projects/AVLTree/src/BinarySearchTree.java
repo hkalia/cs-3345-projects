@@ -1,40 +1,41 @@
+import java.util.Random;
+
 public class BinarySearchTree<K extends Comparable<? super K>, V> {
     public long complexity = 0;
     public BSTNode<K, V> root;
 
-    public void insert(BSTNode<K, V> root, K key, V value) { //le recursion has arrived
+
+    public void insert(K key, V value) {
         if (value == null) return;
+
         BSTNode<K, V> newNode = new BSTNode<>(key, value);
         if (root == null) {
             root = newNode;
             return;
         }
-        else if(key==root.key) {
-        	root.value = value;
-        }
-        else if(key.compareTo(root.key) < 0)  {
-        	insert(root.left, key, value);
-        }
-        else {
-        	insert(root.right, key, value);
-        }
+        root = insertRecur(root, newNode);
     }
-
-    private int getBalance(BSTNode<K, V> node) {
-        int leftHeight = node.left == null ? -1 : node.left.height;
-        int rightHeight = node.right == null ? -1 : node.right.height;
-
-        return leftHeight - rightHeight;
+    
+    private BSTNode<K,V> insertRecur(BSTNode<K, V> cur, BSTNode<K, V> newNode) { //le recursion has arrived
+    	if (cur == null)
+        	return newNode;
+    	Random rand = new Random();
+        int oneOrZero = rand.nextInt(2);
+        if(oneOrZero == 1) 
+        	cur.left = insertRecur(cur.left, newNode);
+        else
+        	cur.right = insertRecur(cur.right, newNode);
+        return cur;
     }
 
 	public boolean isBSTOrder(BSTNode<K, V> cur, K min, K max) { 
 		if (cur == null) return true;
 		if (cur.key.compareTo(min) < 0) {
-			System.out.println("Not BST order: " + cur.key + "is smaller than its left child");
+			System.out.println("Not BST order: " + cur.key + " is smaller than its left child");
 			return false;
 		}		
 		if (cur.key.compareTo(max) > 0) {
-			System.out.println("Not BST order: " + cur.key + "is larger than its right child");
+			System.out.println("Not BST order: " + cur.key + " is larger than its right child");
 			return false;	
 		}
 		
@@ -44,12 +45,21 @@ public class BinarySearchTree<K extends Comparable<? super K>, V> {
 	
 	public boolean isAVLStructure(BSTNode<K, V> cur) {
 		if (cur == null) return true;
-		
-		int difference = Math.abs(cur.left.height - cur.right.height);
+		int leftHeight;
+		int rightHeight;
+		if (cur.left == null)
+			leftHeight = -1;
+		else
+			leftHeight = cur.left.height;
+		if (cur.right == null)
+			rightHeight = -1;
+		else
+			rightHeight = cur.right.height;
+		int difference = Math.abs(leftHeight - rightHeight);
 		if (difference < 2 && isAVLStructure(cur.left) && isAVLStructure(cur.right)) 
 			return true;
 		else {
-			System.out.println("Not AVL structure: " + cur.key + "is not height balanced");
+			System.out.println("Not AVL structure: " + cur.key + " is not height balanced");
 			return false;
 		}
 	}
