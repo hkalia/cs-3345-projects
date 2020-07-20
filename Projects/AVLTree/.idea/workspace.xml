@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="527a8153-4c21-47df-94aa-5ea6bc916070" name="Default Changelist" comment="">
+    <list default="true" id="527a8153-4c21-47df-94aa-5ea6bc916070" name="Default Changelist" comment="Add dash to ISBN list">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listISBN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/listISBN.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +57,8 @@
       <workItem from="1594744455665" duration="17000" />
       <workItem from="1594744571849" duration="4389000" />
       <workItem from="1594830587133" duration="13330000" />
-      <workItem from="1594851829492" duration="177000" />
+      <workItem from="1594851829492" duration="392000" />
+      <workItem from="1594860454324" duration="1457000" />
     </task>
     <task id="LOCAL-00001" summary="Create Basic Binary Tree">
       <created>1594749009733</created>
@@ -81,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594851549900</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add dash to ISBN list">
+      <created>1594852357282</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594852357282</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,36 +99,42 @@
     <MESSAGE value="Create Basic Binary Tree" />
     <MESSAGE value="Create Basic AVL Tree" />
     <MESSAGE value="Make AVL Tree Generic&#10;Remove duplicates from ISBN list&#10;Add height and complexity numbers&#10;Add LevelOrder traversal print" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make AVL Tree Generic&#10;Remove duplicates from ISBN list&#10;Add height and complexity numbers&#10;Add LevelOrder traversal print" />
+    <MESSAGE value="Add dash to ISBN list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add dash to ISBN list" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1496" y="-381" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594860980565">
+      <screen x="-1920" y="-571" width="1920" height="1057" />
+    </state>
+    <state x="-1496" y="-381" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@-1920.-571.1920.1057" timestamp="1594860980565" />
     <state x="2053" y="-315" key="#com.intellij.ide.util.MemberChooser" timestamp="1594840603508">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
     <state x="2053" y="-315" key="#com.intellij.ide.util.MemberChooser/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594840603508" />
-    <state x="1658" y="-557" width="1162" height="890" key="CommitChangelistDialog2" timestamp="1594851549611">
+    <state x="-1542" y="-571" width="1162" height="890" key="CommitChangelistDialog2" timestamp="1594860970531">
+      <screen x="-1920" y="-571" width="1920" height="1057" />
+    </state>
+    <state x="-1542" y="-571" key="CommitChangelistDialog2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@-1920.-571.1920.1057" timestamp="1594860970531" />
+    <state x="1658" y="-557" width="1162" height="890" key="CommitChangelistDialog2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852356906" />
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom" timestamp="1594852373837">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
-    <state x="1658" y="-557" width="1162" height="890" key="CommitChangelistDialog2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851549611" />
-    <state width="1878" height="358" key="GridCell.Tab.0.bottom" timestamp="1594851563112">
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852373837" />
+    <state width="1878" height="289" key="GridCell.Tab.0.center" timestamp="1594852373834">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
-    <state width="1878" height="358" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851563112" />
-    <state width="1878" height="358" key="GridCell.Tab.0.center" timestamp="1594851563110">
+    <state width="1878" height="289" key="GridCell.Tab.0.center/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852373834" />
+    <state width="1878" height="289" key="GridCell.Tab.0.left" timestamp="1594852373833">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
-    <state width="1878" height="358" key="GridCell.Tab.0.center/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851563110" />
-    <state width="1878" height="358" key="GridCell.Tab.0.left" timestamp="1594851563110">
+    <state width="1878" height="289" key="GridCell.Tab.0.left/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852373833" />
+    <state width="1878" height="289" key="GridCell.Tab.0.right" timestamp="1594852373836">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
-    <state width="1878" height="358" key="GridCell.Tab.0.left/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851563110" />
-    <state width="1878" height="358" key="GridCell.Tab.0.right" timestamp="1594851563111">
-      <screen x="1280" y="-557" width="1920" height="1057" />
-    </state>
-    <state width="1878" height="358" key="GridCell.Tab.0.right/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851563111" />
+    <state width="1878" height="289" key="GridCell.Tab.0.right/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852373836" />
     <state width="1878" height="358" key="GridCell.Tab.1.bottom" timestamp="1594851563115">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
@@ -146,10 +159,10 @@
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
     <state x="1748" y="-391" key="SettingsEditor/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594745030696" />
-    <state x="1839" y="-290" key="Vcs.Push.Dialog.v2" timestamp="1594851554533">
+    <state x="1839" y="-290" key="Vcs.Push.Dialog.v2" timestamp="1594852362994">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
-    <state x="1839" y="-290" key="Vcs.Push.Dialog.v2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594851554533" />
+    <state x="1839" y="-290" key="Vcs.Push.Dialog.v2/0.23.1280.777/-1920.-571.1920.1057/1280.-557.1920.1057@1280.-557.1920.1057" timestamp="1594852362994" />
     <state x="2005" y="-177" key="cloudConfig.PluginsDialog" timestamp="1594831237032">
       <screen x="1280" y="-557" width="1920" height="1057" />
     </state>
