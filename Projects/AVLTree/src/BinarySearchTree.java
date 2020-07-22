@@ -15,54 +15,54 @@ public class BinarySearchTree<K extends Comparable<? super K>, V> {
         }
         root = insertRecur(root, newNode);
     }
-    
-    private BSTNode<K,V> insertRecur(BSTNode<K, V> cur, BSTNode<K, V> newNode) { //le recursion has arrived
-    	if (cur == null)
-        	return newNode;
-    	Random rand = new Random();
+
+    private BSTNode<K, V> insertRecur(BSTNode<K, V> cur, BSTNode<K, V> newNode) { //le recursion has arrived
+        if (cur == null)
+            return newNode;
+        Random rand = new Random();
         int oneOrZero = rand.nextInt(2);
-        if(oneOrZero == 1) 
-        	cur.left = insertRecur(cur.left, newNode);
+        if (oneOrZero == 1)
+            cur.left = insertRecur(cur.left, newNode);
         else
-        	cur.right = insertRecur(cur.right, newNode);
+            cur.right = insertRecur(cur.right, newNode);
         return cur;
     }
 
-	public boolean isBSTOrder(BSTNode<K, V> cur, K min, K max) { 
-		if (cur == null) return true;
-		if (cur.key.compareTo(min) < 0) {
-			System.out.println("Not BST order: " + cur.key + " is smaller than its left child");
-			return false;
-		}		
-		if (cur.key.compareTo(max) > 0) {
-			System.out.println("Not BST order: " + cur.key + " is larger than its right child");
-			return false;	
-		}
-		
-		// min and max redefined by parent node key
-		return isBSTOrder(cur.left, min, cur.key) && isBSTOrder(cur.right, cur.key, max);  
-	}
-	
-	public boolean isAVLStructure(BSTNode<K, V> cur) {
-		if (cur == null) return true;
-		int leftHeight;
-		int rightHeight;
-		if (cur.left == null)
-			leftHeight = -1;
-		else
-			leftHeight = cur.left.height;
-		if (cur.right == null)
-			rightHeight = -1;
-		else
-			rightHeight = cur.right.height;
-		int difference = Math.abs(leftHeight - rightHeight);
-		if (difference < 2 && isAVLStructure(cur.left) && isAVLStructure(cur.right)) 
-			return true;
-		else {
-			System.out.println("Not AVL structure: " + cur.key + " is not height balanced");
-			return false;
-		}
-	}
+    public boolean isBSTOrder(BSTNode<K, V> cur, K min, K max) {
+        if (cur == null) return true;
+        if (cur.key.compareTo(min) < 0) {
+            System.out.println("Not BST order: " + cur.key + " is smaller than its left child");
+            return false;
+        }
+        if (cur.key.compareTo(max) > 0) {
+            System.out.println("Not BST order: " + cur.key + " is larger than its right child");
+            return false;
+        }
+
+        // min and max redefined by parent node key
+        return isBSTOrder(cur.left, min, cur.key) && isBSTOrder(cur.right, cur.key, max);
+    }
+
+    public boolean isAVLStructure(BSTNode<K, V> cur) {
+        if (cur == null) return true;
+        int leftHeight;
+        int rightHeight;
+        if (cur.left == null)
+            leftHeight = -1;
+        else
+            leftHeight = cur.left.height;
+        if (cur.right == null)
+            rightHeight = -1;
+        else
+            rightHeight = cur.right.height;
+        int difference = Math.abs(leftHeight - rightHeight);
+        if (difference < 2 && isAVLStructure(cur.left) && isAVLStructure(cur.right))
+            return true;
+        else {
+            System.out.println("Not AVL structure: " + cur.key + " is not height balanced");
+            return false;
+        }
+    }
 
 
     public void printPreOrder(BSTNode<K, V> tree) {
