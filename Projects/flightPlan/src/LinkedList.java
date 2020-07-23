@@ -3,10 +3,6 @@ import java.util.Iterator;
 public class LinkedList<E> implements Iterable<Node<E>> {
     Node<E> head, tail;
 
-    LinkedList(Node<E> head) {
-        this.head = this.tail = head;
-    }
-
     LinkedList(E head) {
         this.head = this.tail = new Node<>(head);
     }
@@ -15,14 +11,12 @@ public class LinkedList<E> implements Iterable<Node<E>> {
         Node<E> node = new Node<>(data);
         this.tail.next = node;
         this.tail = node;
-
     }
 
     void addFirst(E data) {
         Node<E> node = new Node<>(data);
         node.next = this.head;
         this.head = node;
-
     }
 
     @Override
