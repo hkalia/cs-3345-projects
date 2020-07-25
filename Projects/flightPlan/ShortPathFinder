@@ -27,6 +27,8 @@ public class ShortPathFinder {
 			notFoundList.remove(minCostNode);								// linear time, needs to be implemented as a stack?
 			for (Node<ConnectionData> cur : minCostNode.data.connections) {
 				if (!cur.data.known) {
+					if (cur.data.cost == null) 
+						cur.data.cost = Integer.MAX_VALUE;			// unknown cost is set to null
 					if (minCost + cur.data.minuteCost < cur.data.cost) {
 						cur.data.cost = minCost + cur.data.minuteCost;		// put as T Cost for now will add $ Cost later		
 						minCostNode.data.path = cur.data.cityName;
