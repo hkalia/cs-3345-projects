@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+
+public class ShortPathFinder {
+	
+	public void dijkstra(FlightGraph graph, Node<CityData> start) {
+		if (graph.adjList == null) return; 
+		
+		ArrayList<Node<CityData>> notFoundList = new ArrayList<>();
+		for (Node<CityData> cur : graph.adjList) {
+			notFoundList.add(cur);
+		}
+		start.data.connections.head.data.cost = 0;
+		while (!notFoundList.isEmpty()) {													
+			int minCost = Integer.MAX_VALUE;
+			Node<CityData> minCostNode = null;
+			for (Node<CityData> cur : notFoundList) {						// find smallest unknown; linear time, need to implement a minHeap here for O(logN)
+				Integer cost = cur.data.connections.head.data.cost;			
+				if (cost == null) continue;									// cost = null : cost = infinity
+				if (cost < minCost) {
+					minCost = cost;
+					minCostNode = cur;
+				}
+			}
+			if (minCostNode == null) break;									// only paths left do not lead to start node, break loop
+			minCostNode.data.connections.head.data.known = true;
+			notFoundList.remove(minCostNode);								// linear time, needs to be implemented as a stack?
+			for (Node<ConnectionData> cur : minCostNode.data.connections) {
+				if (!cur.data.known) {
+					if (minCost + cur.data.minuteCost < cur.data.cost) {
+						cur.data.cost = minCost + cur.data.minuteCost;		// put as T Cost for now will add $ Cost later		
+						minCostNode.data.path = cur.data.cityName;
+					}
+				}
+			}
+		}
+	}
+}
