@@ -27,10 +27,16 @@ public class Main {
 			sc.close();
 			flightGraph.print();
 
+			ShortPathFinder pathFinder = new ShortPathFinder();
 			sc = new Scanner(requests);
-
-			while (sc.hasNextLine()) {
-				System.out.println(sc.nextLine());
+			int requestNum = Integer.parseInt(sc.nextLine());
+			for (int i = 0; i < requestNum; i++) {
+				String[] request = new String[3];
+				request = sc.nextLine().split("\\|", 3);
+				Boolean costPath = false;
+				if (request[2].compareTo("T") == 0)
+					costPath = true;
+				pathFinder.dijkstra(flightGraph, request[0], request[1], costPath);
 			}
 			sc.close();
 		} catch (IOException e) {
