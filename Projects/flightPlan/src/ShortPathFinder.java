@@ -1,46 +1,58 @@
+import java.util.ArrayList;
 import java.util.PriorityQueue;
+import java.util.Stack;
 
 public class ShortPathFinder {
 
-    public void dijkstra(FlightGraph graph, Node<CityData> start, Boolean costPath) {    // costPath = true ? minuteCost : pennyCost
-        if (graph.adjList == null) return;
-        start.data.cost = 0;
-        PriorityQueue<Node<CityData>> notFoundHeap = new PriorityQueue<>(graph.numNodes, new PathComparator());
-        for (Node<CityData> cur : graph.adjList)
-            notFoundHeap.add(cur);
-        while (!notFoundHeap.isEmpty()) {
-            Node<CityData> minCostNode = notFoundHeap.peek();
-            if (minCostNode.data.cost == Integer.MAX_VALUE)
-                break;    // only paths left do not lead to start node, break loop
-            minCostNode.data.known = true;
-            notFoundHeap.remove();
-            for (Node<ConnectionData> cur : minCostNode.data.connections) {
-                for (Node<CityData> cityA : notFoundHeap) {
-                    if (cityA.data.cityName.compareTo(cur.data.cityName) == 0) { // if cityA is unknown
-                        if (minCostNode.data.cost + weight(cur, costPath) < cityA.data.cost) {
-                            cityA.data.cost = minCostNode.data.cost + weight(cur, costPath);
-                            cityA.data.path = minCostNode;
-                        }
-                    }
-                }
-            }
+	public void dijkstra(FlightGraph graph, String startCityName, String endCityName, Boolean costPath) {
+		if (graph.adjList == null)
+			return;
+		CityData start = null;
+		CityData end = null;
+		ArrayList<CityData> notFoundList = new ArrayList<>();
+		for (Node<CityData> cur : graph.adjList) {
+			if (cur.data.cityName.compareTo(startCityName) == 0)
+				start = cur.data;
+			if (cur.data.cityName.compareTo(endCityName) == 0)
+				end = cur.data;
+			cur.data.cost = Integer.MAX_VALUE;
+			notFoundList.add(cur.data);
+		}
+		start.cost = 0;
+		while (!notFoundList.isEmpty()) {
+			int minCost = Integer.MAX_VALUE;
+			CityData minCostCity = null;
+			for (CityData cur : notFoundList) {
+				if (cur.cost < minCost) {
+					minCostCity = cur;
+				}
+			}
+			if (minCostCity.cost == Integer.MAX_VALUE)
+				break; // only paths left do not lead to start node, break loop
+			minCostCity.known = true;
+			notFoundList.remove(minCostCity);
+			for (Node<ConnectionData> cur : minCostCity.connections) {
+				for (CityData city : notFoundList)
+					if (cur.data.cityName.compareTo(city.cityName) == 0) // if city unknown
+						if (minCostCity.cost + weight(cur, costPath) < city.cost) {
+							city.cost = minCostCity.cost + weight(cur, costPath);
+							city.path = minCostCity;
+						}
+			}
+		}
+		printPath(graph, start, end);
+	}
 
-        }
-    }
+	public int weight(Node<ConnectionData> connection, Boolean costPath) {
+		return costPath == true ? connection.data.minuteCost : connection.data.pennyCost;
+	}
 
-    public int weight(Node<ConnectionData> connection, Boolean costPath) {
-        if (costPath) {
-            return connection.data.minuteCost;
-        } else
-            return connection.data.pennyCost;
-    }
-
-    public void printPath(FlightGraph graph, Node<CityData> start, Node<CityData> destination) {
-        String str = destination.data.cityName;
-        while (destination.data.cityName.compareTo(start.data.cityName) != 0) {
-            destination = destination.data.path;
-            str = destination.data.cityName + " -> " + str;
-        }
-        System.out.println("Shortest Path: " + str);
-    }
+	public void printPath(FlightGraph graph, CityData start, CityData destination) {
+		String str = destination.cityName;
+		while (destination.cityName.compareTo(start.cityName) != 0 && destination.path != null) {
+			destination = destination.path;
+			str = destination.cityName + " -> " + str;
+		}
+		System.out.println("Shortest Path: " + str);
+	}
 }
