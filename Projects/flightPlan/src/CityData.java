@@ -3,7 +3,7 @@ public class CityData {
     LinkedList<ConnectionData> connections;
     Boolean known;
     Integer cost;
-    Node<CityData> path;
+    CityData path;
     
     CityData(String cityName, ConnectionData connections) {
         this.cityName = cityName;
