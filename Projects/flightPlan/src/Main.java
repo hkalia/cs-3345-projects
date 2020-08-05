@@ -34,8 +34,14 @@ public class Main {
 				String[] request = new String[3];
 				request = sc.nextLine().split("\\|", 3);
 				Boolean costPath = false;
-				if (request[2].compareTo("T") == 0)
+				System.out.print("Flight " + (i+1) + ": " + request[0] + " to " + request[1]);
+				if (request[2].compareTo("T") == 0) {
 					costPath = true;
+					System.out.println(" (Cost)");
+				}
+				else {
+					System.out.println(" (Time)");
+				}
 				pathFinder.dijkstra(flightGraph, request[0], request[1], costPath);
 			}
 			sc.close();

@@ -3,13 +3,17 @@ public class CityData {
     LinkedList<ConnectionData> connections;
     Boolean known;
     Integer cost;
-    Node<CityData> path;
+    Integer pennyCost;
+    Integer minuteCost;
+    CityData path;
     
     CityData(String cityName, ConnectionData connections) {
         this.cityName = cityName;
         this.connections = new LinkedList<>(connections);
         this.known = false;
         this.cost = Integer.MAX_VALUE;
+        this.pennyCost = Integer.MAX_VALUE;
+        this.minuteCost = Integer.MAX_VALUE;
         this.path = null;
     }
 

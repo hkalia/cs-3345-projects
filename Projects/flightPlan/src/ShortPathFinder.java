@@ -19,6 +19,8 @@ public class ShortPathFinder {
 			notFoundList.add(cur.data);
 		}
 		start.cost = 0;
+		start.minuteCost = 0;
+		start.pennyCost = 0;
 		while (!notFoundList.isEmpty()) {
 			int minCost = Integer.MAX_VALUE;
 			CityData minCostCity = null;
@@ -36,7 +38,10 @@ public class ShortPathFinder {
 					if (cur.data.cityName.compareTo(city.cityName) == 0) // if city unknown
 						if (minCostCity.cost + weight(cur, costPath) < city.cost) {
 							city.cost = minCostCity.cost + weight(cur, costPath);
+							city.pennyCost = minCostCity.pennyCost + cur.data.pennyCost;
+							city.minuteCost = minCostCity.minuteCost + cur.data.minuteCost;
 							city.path = minCostCity;
+							
 						}
 			}
 		}
@@ -46,13 +51,17 @@ public class ShortPathFinder {
 	public int weight(Node<ConnectionData> connection, Boolean costPath) {
 		return costPath == true ? connection.data.minuteCost : connection.data.pennyCost;
 	}
+	
+	
 
 	public void printPath(FlightGraph graph, CityData start, CityData destination) {
 		String str = destination.cityName;
+		int minuteCost = destination.minuteCost;
+		int pennyCost = destination.pennyCost;
 		while (destination.cityName.compareTo(start.cityName) != 0 && destination.path != null) {
 			destination = destination.path;
 			str = destination.cityName + " -> " + str;
 		}
-		System.out.println("Shortest Path: " + str);
+		System.out.println("" + str + ". Time: " + minuteCost + " Cost: " + pennyCost/100);
 	}
 }
