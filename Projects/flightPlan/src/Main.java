@@ -25,7 +25,6 @@ public class Main {
 				flightGraph.addEdge(sc.nextLine().split("\\|", 4));
 			}
 			sc.close();
-			flightGraph.print();
 
 			ShortPathFinder pathFinder = new ShortPathFinder();
 			sc = new Scanner(requests);
